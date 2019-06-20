@@ -15,12 +15,14 @@
   --c-dark-blue: #064789;
   --c-light-blue: #427aa1;
   --c-pink: #ff5d73;
-  --c-pink-gradient: linear-gradient(45deg, #fe5196, #f77062);
+  --c-pink-gradient: linear-gradient(45deg, #ff5d73, #fe5196);
   --header-height: 3rem;
   --footer-height: calc(
     1.5rem + 1.5rem + 0.8rem
   ); /* double padding + font-size */
 }
+
+/* linear-gradient(45deg, #fe5196, #f77062); */
 
 body {
   font-family: "Roboto", sans-serif;
@@ -74,7 +76,7 @@ h4 {
 .aside {
   grid-area: aside;
   background: var(--c-white);
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
 }
 /* -------------------------------------------------------------------------- */
 /* Page footer */
@@ -154,15 +156,19 @@ h4 {
     minmax(var(--diary-padding), auto);
 }
 
-.diary__header {
+.diary__header,
+.diary__text,
+.diary__nav {
   grid-column: 2;
+}
+
+.diary__header {
   font-size: 1.8rem;
   color: var(--c-black);
   text-align: center;
 }
 
 .diary__text {
-  grid-column: 2;
   color: var(--c-dark-grey);
   text-align: justify;
 }
@@ -181,7 +187,6 @@ h4 {
 }
 
 .diary__nav {
-  grid-column: 2;
   margin: 2rem 0;
 }
 
@@ -236,6 +241,131 @@ h4 {
     --diary-padding: 4rem;
   }
 }
+/* -------------------------------------------------------------------------- */
+/* Article Blog */
+.blog {
+  --blog-padding: 1rem;
+  background: var(--c-white);
+  display: grid;
+  grid-template-columns:
+    minmax(var(--blog-padding), auto)
+    minmax(calc(320px - calc(2 * var(--blog-padding))), 1100px)
+    minmax(var(--blog-padding), auto);
+}
+
+.blog__section,
+.blog__footer {
+  grid-column: 2;
+}
+
+.blog__header {
+  grid-column: 1 / 4;
+  height: calc(100% - var(--header-height));
+}
+
+.hero-box {
+  display: flex;
+}
+
+.blog__title-box {
+  display: flex;
+  justify-content: space-evenly;
+  background: var(--c-pink-gradient);
+  width: 20%;
+}
+
+.blog__title {
+  font-size: 1.2rem;
+  color: var(--c-white);
+  white-space: nowrap;
+  letter-spacing: 0.1rem;
+  transform: rotate(270deg);
+  align-self: center;
+}
+
+.blog__image {
+  display: block;
+  width: 80%;
+  max-height: calc(100vh - var(--header-height) - 5rem);
+  object-fit: cover;
+
+  /* 5rem = height of .blog__description-box */
+}
+
+.blog__description-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--c-black);
+  min-height: 5rem;
+}
+
+.blog__description {
+  color: var(--c-white);
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.blog__section {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--c-light-grey);
+}
+
+.blog__section-header {
+  font-size: 1.4rem;
+  margin: 1.5rem 0;
+  color: var(--c-dark-grey);
+  text-align: center;
+}
+
+.blog__content {
+  text-align: justify;
+}
+
+.blog__footer-text {
+  color: var(--c-medium-grey);
+  font-size: 0.8rem;
+}
+
+.blog__footer-link {
+  color: var(--c-medium-grey);
+}
+
+.blog__footer-link:hover {
+  color: var(--c-pink);
+}
+
+@media screen and (min-width: 736px) {
+  .blog {
+    --blog-padding: 2rem;
+  }
+
+  .blog__title-box {
+    width: 15%;
+  }
+
+  .blog__title {
+    font-size: 1.4rem;
+  }
+
+  .blog__image {
+    width: 85%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .blog {
+    --blog-padding: 4rem;
+  }
+
+  .blog__title {
+    font-size: 2.4rem;
+  }
+}
+
 /* -------------------------------------------------------------------------- */
 /* Components */
 
@@ -412,7 +542,7 @@ h4 {
   }
 }
 
-@media screen and (min-width: 568px) {
+@media screen and (min-width: 736px) {
   .navigation__list {
     width: 50%;
   }
@@ -422,7 +552,34 @@ h4 {
 }
 /* -------------------------------------------------------------------------- */
 /* Aside */
+.aside {
+  --aside-padding: 1rem;
+  background: var(--c-white);
+  display: grid;
+  grid-template-columns:
+    minmax(var(--aside-padding), auto)
+    minmax(calc(320px - calc(2 * var(--aside-padding))), 1100px)
+    minmax(var(--aside-padding), auto);
+}
 
+.aside__header {
+  grid-column: 2;
+  font-size: 1.4rem;
+  color: var(--c-black);
+  text-align: center;
+}
+
+@media screen and (min-width: 736px) {
+  .aside {
+    --aside-padding: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .aside {
+    --aside-padding: 4rem;
+  }
+}
 /* -------------------------------------------------------------------------- */
 /* Footer */
 .footer__text {
