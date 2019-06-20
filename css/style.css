@@ -415,6 +415,7 @@ h4 {
 /* Hamburger */
 .hamburger {
   background: var(--c-white);
+  outline-color: var(--c-white);
   display: flex;
   flex-direction: column;
   padding: 10px;
