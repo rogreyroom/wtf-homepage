@@ -1,2 +1,5 @@
 .sass-cache/
 *.css.map
+
+# VSC history
+.history
