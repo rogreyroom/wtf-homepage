@@ -1,0 +1,444 @@
+/* Resets */
+@import url("./normalize.css");
+@import url("./reset.css");
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,900|Roboto:400&display=swap&subset=latin-ext");
+
+/* Global */
+:root {
+  --c-black: #171717;
+  --c-white: #f8f8f8;
+  --c-dark-grey: #494949;
+  --c-medium-grey: #939292;
+  --c-light-grey: #e7e6e6;
+  --c-dark-blue: #064789;
+  --c-light-blue: #427aa1;
+  --c-pink: #ff5d73;
+  --c-pink-gradient: linear-gradient(45deg, #fe5196, #f77062);
+  --header-height: 3rem;
+  --footer-height: calc(
+    1.5rem + 1.5rem + 0.8rem
+  ); /* double padding + font-size */
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  background: var(--c-white);
+  color: var(--c-black);
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "aside"
+    "footer";
+  grid-template-rows:
+    var(--header-height)
+    auto
+    max-content
+    var(--footer-height);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+}
+/* -------------------------------------------------------------------------- */
+/* Page header with navigation */
+.header {
+  grid-area: header;
+  background: var(--c-white);
+  display: grid;
+  grid-template-columns: 0.7fr 0.3fr;
+  align-content: center;
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+/* -------------------------------------------------------------------------- */
+/* Page main content */
+.main {
+  grid-area: main;
+}
+/* -------------------------------------------------------------------------- */
+/* Page aside */
+.aside {
+  grid-area: aside;
+  background: var(--c-white);
+  padding-bottom: 3rem;
+}
+/* -------------------------------------------------------------------------- */
+/* Page footer */
+.footer {
+  grid-area: footer;
+  background: var(--c-black);
+  margin-top: auto;
+  padding: 1.5rem;
+}
+/* -------------------------------------------------------------------------- */
+/* Sections - section hero */
+.hero {
+  --hero-padding: 1rem;
+  display: grid;
+  grid-template-columns:
+    minmax(var(--hero-padding), auto)
+    minmax(calc(320px - 2rem), 1100px)
+    minmax(var(--hero-padding), auto);
+  grid-template-areas:
+    ". title ."
+    ". sub-title .";
+  grid-template-rows: 0.8fr 1.2fr;
+  align-items: center;
+  height: calc(100vh - var(--header-height));
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url("https://unsplash.it/id/302/1100/680/");
+  background-position: left center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* transform: rotateY(180deg); */
+  z-index: -1;
+}
+
+.hero__title {
+  grid-area: title;
+  align-self: end;
+  color: var(--c-black);
+  font-size: 1.8rem;
+  margin-bottom: 0;
+}
+
+.hero__sub-title {
+  grid-area: sub-title;
+  color: var(--c-dark-grey);
+  align-self: start;
+}
+
+@media screen and (min-width: 736px) {
+  .hero {
+    --hero-padding: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero {
+    --hero-padding: 4rem;
+  }
+}
+/* -------------------------------------------------------------------------- */
+/* Sections - section diary */
+.diary {
+  --diary-padding: 1rem;
+  background: var(--c-white);
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns:
+    minmax(var(--diary-padding), auto)
+    minmax(calc(320px - 2rem), 1100px)
+    minmax(var(--diary-padding), auto);
+}
+
+.diary__header {
+  grid-column: 2;
+  font-size: 1.8rem;
+  color: var(--c-black);
+  text-align: center;
+}
+
+.diary__text {
+  grid-column: 2;
+  color: var(--c-dark-grey);
+  text-align: justify;
+}
+
+.diary__text--center {
+  text-align: center;
+}
+
+.diary__text--small {
+  font-size: 0.9rem;
+}
+
+.up-small {
+  font-size: 0.6rem;
+  vertical-align: text-top;
+}
+
+.diary__nav {
+  grid-column: 2;
+  margin: 2rem 0;
+}
+
+.diary__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-gap: 0.6rem;
+}
+
+.diary__item {
+  background: var(--c-pink);
+}
+
+.diary__item:hover {
+  background: var(--c-light-grey);
+}
+
+.diary__link {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: var(--c-white);
+}
+
+.diary__link:hover {
+  color: var(--c-dark-grey);
+}
+
+@media screen and (min-width: 568px) {
+  .diary__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 736px) {
+  .diary {
+    --diary-padding: 2rem;
+  }
+  .diary__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .diary {
+    --diary-padding: 4rem;
+  }
+}
+/* -------------------------------------------------------------------------- */
+/* Components */
+
+/* Logo */
+.logo {
+  grid-column: 1;
+  padding-left: 1rem;
+}
+
+.logo__link {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--c-black);
+  /* line-height: var(--header-height); */
+}
+
+.logo__link:hover {
+  color: var(--c-pink);
+}
+
+@media screen and (min-width: 568px) {
+  .logo {
+    padding-left: 2rem;
+  }
+}
+/* -------------------------------------------------------------------------- */
+/* Navigation */
+.navigation {
+  grid-column: 2;
+  justify-self: end;
+  align-self: center;
+  padding-right: 1rem;
+}
+
+@media screen and (min-width: 568px) {
+  .navigation {
+    padding-right: 2rem;
+  }
+}
+/* -------------------------------------------------------------------------- */
+/* Hamburger */
+.hamburger {
+  background: var(--c-white);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: auto;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger__line {
+  position: relative;
+}
+
+.hamburger__line,
+.hamburger__line::after,
+.hamburger__line::before {
+  display: inline-block;
+  background: var(--c-black);
+  width: 22px;
+  height: 2px;
+}
+
+.hamburger__line::after,
+.hamburger__line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.hamburger__line::after {
+  top: 6px;
+}
+.hamburger__line::before {
+  bottom: 6px;
+}
+
+.hamburger:hover .hamburger__line,
+.hamburger:hover .hamburger__line::after,
+.hamburger:hover .hamburger__line::before {
+  background: var(--c-pink);
+}
+
+.hamburger--close .hamburger__line {
+  transform: rotate(45deg);
+}
+
+.hamburger--close .hamburger__line::after {
+  transform: rotate(90deg);
+  top: 0;
+}
+
+.hamburger--close .hamburger__line::before {
+  opacity: 0;
+}
+
+.hamburger--close:hover .hamburger__line,
+.hamburger--close:hover .hamburger__line::after {
+  background: var(--c-pink);
+}
+/* -------------------------------------------------------------------------- */
+/* Navigation menu */
+.diary__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-gap: 0.6rem;
+}
+
+.navigation__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--c-white);
+
+  /* display: flex; */
+  display: none;
+
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: var(--header-height);
+  right: 0;
+  overflow: auto;
+}
+
+.navigation__list--active {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation__item {
+  background: var(--c-white);
+  border-bottom: 1px solid var(--c-light-grey);
+}
+
+.navigation__item:hover {
+  background: var(--c-pink);
+}
+
+.navigation__item:first-child .navigation__link {
+  color: var(--c-medium-grey);
+}
+
+.navigation__item:first-child:hover .navigation__link {
+  color: var(--c-white);
+}
+
+.navigation__link {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  color: var(--c-black);
+  text-align: center;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  line-height: 2;
+}
+
+.navigation__link:hover {
+  color: var(--c-white);
+}
+
+@media screen and (min-width: 568px) {
+  .navigation__item {
+    width: 60%;
+    align-self: center;
+  }
+}
+
+@media screen and (min-width: 568px) {
+  .navigation__list {
+    width: 50%;
+  }
+  .navigation__item {
+    width: 80%;
+  }
+}
+/* -------------------------------------------------------------------------- */
+/* Aside */
+
+/* -------------------------------------------------------------------------- */
+/* Footer */
+.footer__text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--c-medium-grey);
+}
+
+.footer__link {
+  text-decoration: none;
+  color: var(--c-medium-grey);
+}
+
+.footer__link:hover {
+  color: var(--c-light-grey);
+}
+/* -------------------------------------------------------------------------- */
