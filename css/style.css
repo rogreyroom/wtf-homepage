@@ -163,7 +163,7 @@ h4 {
 
 .diary__header,
 .diary__text,
-.diary__nav {
+.diary__list {
   grid-column: 2;
 }
 
@@ -191,13 +191,9 @@ h4 {
   vertical-align: text-top;
 }
 
-.diary__nav {
-  margin: 2rem 0;
-}
-
 .diary__list {
   list-style: none;
-  margin: 0;
+  margin: 2rem 0;
   padding: 0;
   display: grid;
   grid-gap: 0.6rem;
