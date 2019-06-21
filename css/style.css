@@ -89,7 +89,7 @@ h4 {
   display: grid;
   grid-template-columns:
     minmax(var(--hero-padding), auto)
-    minmax(calc(320px - 2rem), 1100px)
+    minmax(288px, 1100px)
     minmax(var(--hero-padding), auto);
   grid-template-areas:
     ". title ."
@@ -157,7 +157,7 @@ h4 {
   display: grid;
   grid-template-columns:
     minmax(var(--diary-padding), auto)
-    minmax(calc(320px - 2rem), 1100px)
+    minmax(288px, 1100px)
     minmax(var(--diary-padding), auto);
 }
 
@@ -250,7 +250,7 @@ h4 {
   display: grid;
   grid-template-columns:
     minmax(var(--blog-padding), auto)
-    minmax(calc(320px - calc(2 * var(--blog-padding))), 1100px)
+    minmax(288px, 1100px)
     minmax(var(--blog-padding), auto);
 }
 
@@ -289,7 +289,7 @@ h4 {
   width: 80%;
   max-height: calc(
     100vh - var(--header-height) - 5rem
-  ); /* 5rem = height of .blog__description-box */
+  ); /* 5rem = height of .blog__description */
   object-fit: cover;
 }
 
@@ -554,7 +554,7 @@ h4 {
   display: grid;
   grid-template-columns:
     minmax(var(--aside-padding), auto)
-    minmax(calc(320px - calc(2 * var(--aside-padding))), 1100px)
+    minmax(288px, 1100px)
     minmax(var(--aside-padding), auto);
 }
 
