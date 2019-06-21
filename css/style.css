@@ -562,9 +562,12 @@ h4 {
 
 .aside__header {
   grid-column: 2;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
   font-size: 1.4rem;
   color: var(--c-black);
   text-align: center;
+  margin: 1.8rem 0;
 }
 
 @media screen and (min-width: 736px) {
