@@ -293,14 +293,6 @@ h4 {
   object-fit: cover;
 }
 
-.blog__description-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--c-black);
-  min-height: 5rem;
-}
-
 .blog__description {
   color: var(--c-white);
   text-transform: uppercase;
@@ -308,6 +300,12 @@ h4 {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 1rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--c-black);
+  min-height: 5rem;
 }
 
 .blog__section {
