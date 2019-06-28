@@ -1,0 +1,19 @@
+{
+  "name": "wtf-homepage",
+  "version": "0.0.2",
+  "description": "Homepage project for wft-cotenfrontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogreyroom/wtf-homepage.git"
+  },
+  "author": "Robert Adamczewski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rogreyroom/wtf-homepage/issues"
+  },
+  "homepage": "https://github.com/rogreyroom/wtf-homepage#readme"
+}
