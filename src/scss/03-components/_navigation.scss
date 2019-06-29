@@ -30,7 +30,9 @@
     border-bottom: 1px solid var(--c-light-grey);
   }
 
-  &__item:hover {
+  &__item:hover,
+  &__item:focus,
+  &__item:active {
     background: var(--c-pink);
   }
 
@@ -38,7 +40,9 @@
     color: var(--c-medium-grey);
   }
 
-  &__item:first-child:hover &__link {
+  &__item:first-child:hover &__link,
+  &__item:first-child:focus &__link,
+  &__item:first-child:active &__link {
     color: var(--c-white);
   }
 
@@ -54,7 +58,9 @@
     line-height: 2;
   }
 
-  &__link:hover {
+  &__link:hover,
+  &__link:focus,
+  &__link:active {
     color: var(--c-white);
   }
 

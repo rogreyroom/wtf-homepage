@@ -87,7 +87,9 @@
     color: var(--c-medium-grey);
   }
 
-  &__footer-link:hover {
+  &__footer-link:hover,
+  &__footer-link:focus,
+  &__footer-link:active {
     color: var(--c-pink);
   }
 

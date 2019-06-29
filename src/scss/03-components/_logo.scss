@@ -11,8 +11,11 @@
     color: var(--c-black);
   }
 
-  &__link:hover {
+  &__link:hover,
+  &__link:focus,
+  &__link:active {
     color: var(--c-pink);
+    border: 2px solid var(-pink);
   }
 
   @media screen and (min-width: map-get($mq, small)) {

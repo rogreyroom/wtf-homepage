@@ -112,7 +112,9 @@
     background: var(--c-pink);
   }
 
-  &__item:hover {
+  &__item:hover,
+  &__item:focus,
+  &__item:active {
     background: var(--c-light-grey);
   }
 
@@ -127,7 +129,9 @@
     color: var(--c-white);
   }
 
-  &__link:hover {
+  &__link:hover,
+  &__link:focus,
+  &__link:active {
     color: var(--c-dark-grey);
   }
 

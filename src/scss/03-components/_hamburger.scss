@@ -43,7 +43,13 @@
 
   &:hover &__line,
   &:hover &__line::after,
-  &:hover &__line::before {
+  &:hover &__line::before,
+  &:focus &__line,
+  &:focus &__line::after,
+  &:focus &__line::before,
+  &:active &__line,
+  &:active &__line::after,
+  &:active &__line::before {
     background: var(--c-pink);
   }
 
@@ -61,7 +67,11 @@
   }
 
   &--close:hover &__line,
-  &--close:hover &__line::after {
+  &--close:hover &__line::after,
+  &--close:focus &__line,
+  &--close:focus &__line::after,
+  &--close:active &__line,
+  &--close:active &__line::after {
     background: var(--c-pink);
   }
 }

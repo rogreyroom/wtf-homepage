@@ -13,7 +13,9 @@
     color: var(--c-medium-grey);
   }
 
-  &__link:hover {
+  &__link:hover,
+  &__link:focus,
+  &__link:active {
     color: var(--c-light-grey);
   }
 }
