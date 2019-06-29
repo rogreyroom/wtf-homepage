@@ -1,0 +1,18 @@
+# VSC history
+.history
+
+# Node
+node_modules/
+logs
+*.log
+.npm
+.env
+.nuxt
+
+# Sass
+.sass-cache/
+*.css.map
+
+# Build files
+#public/*
+package-lock.json
