@@ -34,7 +34,8 @@ const config = {
     dest: './public/',
   },
   public: {
-    dist: './public/',
+    serv: './public',
+    dist: './public/**',
     del: './public/**',
   },
 };
@@ -46,7 +47,7 @@ const reload = () => browserSync.reload();
 const server = () => {
   browserSync.init({
     server: {
-      baseDir: config.public.dist,
+      baseDir: config.public.serv,
     },
   });
 };
@@ -56,7 +57,7 @@ const styles = () => {
   return gulp
     .src(config.styles.src)
     .pipe(sass())
-    .pipe(autoprefixer({browsers: ['last 2 versions'], cascade: false}))
+    .pipe(autoprefixer())
     .pipe(sourcemaps.init())
     .pipe(cleanCSS())
     .pipe(sourcemaps.write())

@@ -1,10 +1,12 @@
 /* Footer */
-.footer__text {
-  font-family: map-get($fonts, ff-header);
-  font-weight: map-get($fonts, fw-normal);
-  font-size: 0.8rem;
-  text-align: center;
-  color: var(--c-medium-grey);
+.footer {
+  &__text {
+    font-family: map-get($fonts, ff-header);
+    font-weight: map-get($fonts, fw-normal);
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--c-medium-grey);
+  }
 
   &__link {
     text-decoration: none;

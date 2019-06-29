@@ -15,7 +15,7 @@
     color: var(--c-pink);
   }
 
-  @media screen and (min-width: map-get($mq: small)) {
+  @media screen and (min-width: map-get($mq, small)) {
     padding-left: 2rem;
   }
 }
