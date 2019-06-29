@@ -9,7 +9,7 @@ To deploy public folder to **gh-pages** brunch
 ```git
 > git checkout gh-pages
 > git checkout [master/feature-branch] -- 'public/**'
+> git rm -f -r --ignore-unmatch ./**
 > git mv -f public/** ./
-> git rm -f -r public/**
-> git commit . -m "feat: fresh website deploy `date +\"%Y-%m-%d\"`"
+> git commit . -m "build: fresh website deploy `date +\"%Y-%m-%d\"`"
 ```
