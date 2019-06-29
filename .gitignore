@@ -14,5 +14,5 @@ logs
 *.css.map
 
 # Build files
-public/*
+#public/*
 package-lock.json
