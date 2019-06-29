@@ -1,0 +1,151 @@
+/* Sections - section hero */
+.hero {
+  --hero-padding: 1rem;
+  display: grid;
+  grid-template-columns:
+    minmax(var(--hero-padding), auto)
+    var(--content-width)
+    minmax(var(--hero-padding), auto);
+  grid-template-areas:
+    '. title .'
+    '. sub-title .';
+  grid-template-rows: 0.8fr 1.2fr;
+  align-items: center;
+  height: calc(100vh - var(--header-height));
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('https://unsplash.it/id/302/1100/680/');
+    background-position: left center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+
+  &__title {
+    grid-area: title;
+    align-self: end;
+    color: var(--c-black);
+    font-size: 1.8rem;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+
+  &__sub-title {
+    grid-area: sub-title;
+    color: var(--c-dark-grey);
+    align-self: start;
+  }
+
+  @media screen and (min-width: map-get($mq, medium)) {
+    --hero-padding: 2rem;
+
+    &__title {
+      font-size: 2.2rem;
+    }
+  }
+
+  @media screen and (min-width: map-get($mq, large)) {
+    --hero-padding: 4rem;
+
+    &__title {
+      font-size: 2.6rem;
+    }
+  }
+}
+
+/* Sections - section diary */
+.diary {
+  --diary-padding: 1rem;
+  background: var(--c-white);
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns:
+    minmax(var(--diary-padding), auto)
+    var(--content-width)
+    minmax(var(--diary-padding), auto);
+
+  &__header,
+  &__text,
+  &__list {
+    grid-column: 2;
+  }
+
+  &__header {
+    font-size: 1.8rem;
+    color: var(--c-black);
+    text-align: center;
+  }
+
+  &__text {
+    color: var(--c-dark-grey);
+    text-align: justify;
+  }
+
+  &__text--center {
+    text-align: center;
+  }
+
+  &__text--small {
+    font-size: 0.9rem;
+  }
+
+  .up-small {
+    font-size: 0.6rem;
+    vertical-align: text-top;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 2rem 0;
+    padding: 0;
+    display: grid;
+    grid-gap: 0.6rem;
+  }
+
+  &__item {
+    background: var(--c-pink);
+  }
+
+  &__item:hover {
+    background: var(--c-light-grey);
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    font-family: map-get($fonts, ff-header);
+    font-weight: map-get($fonts, fw-normal);
+    color: var(--c-white);
+  }
+
+  &__link:hover {
+    color: var(--c-dark-grey);
+  }
+
+  @media screen and (min-width: map-get($mq, small)) {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: map-get($mq, medium)) {
+    --diary-padding: 2rem;
+
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media screen and (min-width: map-get($mq, large)) {
+    --diary-padding: 4rem;
+  }
+}

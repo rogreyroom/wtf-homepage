@@ -1,0 +1,14 @@
+// Body layout
+body {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'aside'
+    'footer';
+  grid-template-rows:
+    var(--header-height)
+    auto
+    max-content
+    var(--footer-height);
+}
