@@ -42,7 +42,10 @@ const config = {
 
 // Browser Sync
 const browserSync = bSync.create();
-const reload = () => browserSync.reload();
+const reload = done => {
+  browserSync.reload();
+  done();
+};
 
 const server = () => {
   browserSync.init({
@@ -113,11 +116,11 @@ const html = () => {
 
 // Watch
 const watch = () => {
-  watch(config.styles.src, series(styles, reload));
-  watch(config.scripts.src, series(scripts, reload));
-  watch(config.images.src, series(images, reload));
-  watch(config.fonts.src, series(fonts, reload));
-  watch(config.html.src, series(html, reload));
+  gulp.watch(config.styles.src, gulp.series(styles, reload));
+  gulp.watch(config.scripts.src, gulp.series(scripts, reload));
+  gulp.watch(config.images.src, gulp.series(images, reload));
+  gulp.watch(config.fonts.src, gulp.series(fonts, reload));
+  gulp.watch(config.html.src, gulp.series(html, reload));
 };
 
 // Clean
@@ -126,7 +129,15 @@ const clean = () => {
 };
 
 // Build - dev
-export const dev = gulp.parallel(styles, scripts, images, fonts, html, server);
+export const dev = gulp.parallel(
+  styles,
+  scripts,
+  images,
+  fonts,
+  html,
+  watch,
+  server,
+);
 
 // Build - public
 export const build = gulp.series(
