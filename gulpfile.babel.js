@@ -22,7 +22,7 @@ const config = {
     dest: './public/assets/js/',
   },
   images: {
-    src: './src/image/**/*.{jpg,jpeg,png,svg,ico}',
+    src: './src/images/**/*.{jpg,jpeg,png,svg,ico}',
     dest: './public/assets/images/',
   },
   fonts: {
