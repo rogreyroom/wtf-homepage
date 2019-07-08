@@ -1,0 +1,24 @@
+/* Logo */
+.logo {
+  grid-column: 1;
+  padding-left: 1rem;
+
+  &__link {
+    font-family: map-get($fonts, ff-header);
+    font-weight: map-get($fonts, fw-normal);
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--c-black);
+  }
+
+  &__link:hover,
+  &__link:focus,
+  &__link:active {
+    color: var(--c-pink);
+    border: 2px solid var(-pink);
+  }
+
+  @media screen and (min-width: map-get($mq, small)) {
+    padding-left: 2rem;
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "wtf-homepage",
+  "version": "0.0.2",
+  "description": "Homepage project for wft-cotenfrontend",
+  "main": "gulpfile.babel.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogreyroom/wtf-homepage.git"
+  },
+  "author": "Robert Adamczewski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rogreyroom/wtf-homepage/issues"
+  },
+  "homepage": "https://github.com/rogreyroom/wtf-homepage#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "browser-sync": "^2.26.7",
+    "del": "^4.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}

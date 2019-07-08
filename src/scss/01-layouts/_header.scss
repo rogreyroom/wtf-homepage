@@ -1,0 +1,14 @@
+/* Page header with navigation */
+.header {
+  grid-area: header;
+  background: var(--c-white);
+  display: grid;
+  grid-template-columns: 0.7fr 0.3fr;
+  align-content: center;
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
