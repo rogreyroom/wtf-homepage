@@ -37,7 +37,7 @@ Working directory for the project is **src** folder with subfolders:
 ### Using gulp
 
 - development - run `gulp` or `npm start`
-- production - run `gulp build` or `npm build`
+- production - run `gulp build` or `npm run build`
 - deployment - follow deploy section
 
 ## Deploy
